@@ -4,11 +4,14 @@ module.exports = {
   theme: {
     extend: {
       colors:{
-        'prim-grey' : '#949494',
+        'prim-grey' : '#DBDBDB',
         'accent-green': '#1BB568',
         'secondary-grey': '#B5A7A7'
+      },
+      fontFamily:{
+        "chivo": "Chivo, sans-serif;"
       }
     },
   },
-  plugins: [],
+  plugins: [require("daisyui"),require('@tailwindcss/line-clamp'),],
 }
