@@ -11,44 +11,33 @@ datasource db {
 }
 
 model User {
-  id      Int      @id @default(autoincrement())
-  email   String   @unique
-  name    String?
-  role    String   @default("User")
-  posts   Post[]
-  profile Profile?
-}
-
-model Profile {
-  id     Int    @id @default(autoincrement())
-  bio    String
-  user   User   @relation(fields: [userId], references: [id])
-  userId Int    @unique
+  id       Int     @id @default(autoincrement())
+  email    String  @unique
+  name     String?
+  role     String  @default("User")
+  password String
+  posts    Post[]
 }
 
 model Dessert {
-  id          Int     @id @default(autoincrement())
+  id          Int      @id @default(autoincrement())
   name        String
   description String
-  country     Country @relation(fields: [countryId], references: [id])
-  countryId   Int
-}
-
-model Country {
-  id      Int       @id @default(autoincrement())
-  name    String
-  Dessert Dessert[]
+  picture     String
+  createdAt   DateTime @default(now())
 }
 
 model Subscribers {
-  id    Int    @id @default(autoincrement())
-  email String @unique
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  createdAt DateTime @default(now())
 }
 
 model Post {
   id        Int      @id @default(autoincrement())
   createdAt DateTime @default(now())
   title     String
+  content   String?
   published Boolean  @default(false)
   author    User     @relation(fields: [authorId], references: [id])
   authorId  Int

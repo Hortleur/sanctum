@@ -1,5 +1,10 @@
-<script>
+<script lang="ts">
 import {fade} from "svelte/transition";
+import type {PageData} from "$lib/types";
+export let data: PageData
+
+const newProduct: {} = data.newProducts[0]
+console.log(newProduct)
 </script>
 
 <main>
@@ -11,13 +16,11 @@ import {fade} from "svelte/transition";
         <div class="card w-5/6 mx-auto mt-10 rounded-lg shadow-lg bg-prim-grey relative">
             <span class="badge absolute -top-2 -right-2 badge-primary">New</span>
             <figure>
-                <img src="images/Mango_fool.webp" alt="Mango Fool" class="rounded-t-lg">
+                <img src="{newProduct.picture}" alt="{newProduct.name}" class="rounded-t-lg">
             </figure>
             <div class="card-body">
-                <h3 class="card-title font-chivo">Mango Fool</h3>
-                <p>
-                    un dessert populaire dans les pays d'Afrique de l'Ouest, à base de mangue fraîche, de sucre, de crème et de jus de citron vert. La mangue est écrasée et mélangée avec les autres ingrédients pour créer une texture crémeuse et légèrement acidulée. Ce dessert est souvent servi froid et est apprécié pour son goût rafraîchissant et fruité.
-                </p>
+                <h3 class="card-title font-chivo">{newProduct.name}</h3>
+                <p>{newProduct.description}</p>
             </div>
             <div class="card-actions justify-center mb-5">
                 <a href="/products">
