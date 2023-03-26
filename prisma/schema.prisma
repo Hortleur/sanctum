@@ -7,16 +7,24 @@ generator client {
 
 datasource db {
   provider = "sqlite"
-  url      = "file:./datas/dev.db"
+  url      = env("DATABASE_URL")
 }
 
 model User {
-  id       Int     @id @default(autoincrement())
-  email    String  @unique
-  name     String?
-  role     String  @default("User")
-  password String
-  posts    Post[]
+  id            Int    @id @default(autoincrement())
+  email         String @unique
+  name          String @unique
+  role          Roles  @relation(fields: [roleId], references: [id])
+  roleId        Int
+  passwordHash  String
+  userAuthToken String @unique
+  posts         Post[]
+}
+
+model Roles {
+  id    Int    @id @default(autoincrement())
+  name  String @unique
+  users User[]
 }
 
 model Dessert {

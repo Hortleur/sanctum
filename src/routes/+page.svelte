@@ -4,7 +4,6 @@ import type {PageData} from "$lib/types";
 export let data: PageData
 
 const newProduct: {} = data.newProducts[0]
-console.log(newProduct)
 </script>
 
 <main>
