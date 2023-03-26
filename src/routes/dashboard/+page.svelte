@@ -28,15 +28,14 @@
     export let data
 </script>
 
-<main>
+<main class="bg-prim-grey py-5">
     {#each dashPages as page}
-        <div class="card w-11/12 mx-auto my-5 shadow-xl">
+        <div class="card w-11/12 mx-auto my-5 shadow-xl glass">
             <div class="card-body justify-center">
                 <i class="{page.icone} text-center"></i>
-                <h2 class="card-title">{page.title}</h2>
             </div>
             <div class="card-actions justify-center mb-5">
-                <a href="{page.url}" class="btn btn-primary">Aller</a>
+                <a href="{page.url}" class="btn btn-primary"><h2 class="card-title mr-3">{page.title}</h2><i class="fa-solid fa-right-to-bracket"></i></a>
             </div>
         </div>
 

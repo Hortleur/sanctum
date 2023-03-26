@@ -6,7 +6,6 @@ import {redirect} from "@sveltejs/kit";
 
 export const load: LayoutServerLoad = async ({event, locals, url}: any) => {
     const {pathname} = url;
-    console.log(pathname);
     if (!locals.user || locals.user.role !== "ADMIN") {
         throw redirect(302, "/");
     }
@@ -26,7 +25,15 @@ export const load: LayoutServerLoad = async ({event, locals, url}: any) => {
             }
         }
     );
-    const posts = await prisma.post.findMany();
+    const posts = await prisma.post.findMany({
+        include: {
+            author: {
+                select: {
+                    name: true
+                }
+            }
+        }
+    });
     const subscribers = await prisma.subscribers.findMany();
     const roles = await prisma.roles.findMany();
 

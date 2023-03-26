@@ -12,6 +12,11 @@
                 <th>Action</th>
             </thead>
             <tbody>
+                {#if data.subscribers.length === 0}
+                    <tr>
+                        <td colspan="3" class="text-center">No subscribers yet</td>
+                    </tr>
+                {/if}
                 {#each data.subscribers as subscriber}
                     <tr>
                         <td>{subscriber.email}</td>

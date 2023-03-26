@@ -13,6 +13,7 @@ export const handle: Handle = async ({event, resolve}) => {
             userAuthToken: session
         },
         select: {
+            id: true,
             name: true,
             role: true
         }
@@ -20,6 +21,7 @@ export const handle: Handle = async ({event, resolve}) => {
 
     if (user) {
         event.locals.user = {
+            id: user.id,
             name: user.name,
             // @ts-ignore
             role: user.role.name,
