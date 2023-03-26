@@ -72,13 +72,13 @@ const newProduct: {} = data.newProducts[0]
         <div class="my-5">
             <p class="text-center">Suivez nos actualités en vous inscrivant à notre newsletter</p>
         </div>
-        <div class="form-control">
+        <form action="?/subscribe" method="POST" class="form-control">
             <div class="input-group justify-center">
-                <input type="text" placeholder="E-mail" class="input input-bordered" />
-                <button class="btn btn-primary">
+                <input type="text" placeholder="E-mail" name="email" class="input input-bordered" />
+                <button class="btn btn-primary" type="submit">
                     S'inscrire
                 </button>
             </div>
-        </div>
+        </form>
     </section>
 </main>

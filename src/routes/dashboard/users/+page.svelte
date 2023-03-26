@@ -13,7 +13,6 @@
 
     export let data
     export let form: ActionData
-    console.log(form)
 </script>
 <main class="mt-5">
     {#if form?.success}
