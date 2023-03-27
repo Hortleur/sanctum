@@ -6,7 +6,7 @@ export let data;
 <main class="bg-prim-grey">
     <section>
         <figure>
-            <img src="images/sanctum.svg" alt="Logo Sanctum" class="w-11/12 md:w-1/2 lg:w-1/3 mx-auto">
+            <img src="images/sanctum.svg" alt="Logo Sanctum" class="w-11/12 md:w-1/2 lg:w-1/3 xl:w-1/6 mx-auto">
         </figure>
         <h1 class="text-center text-3xl font-chivo font-bold">Le voyage gustatif en Afrique commence ici !</h1>
     </section>
@@ -47,7 +47,7 @@ export let data;
         </section>
         <section class="py-5 xl:order-2 xl:w-1/2">
             <h2 class="text-4xl font-chivo text-center underline underline-offset-4 mb-5">Blog</h2>
-            <div class="card shadow-lg w-11/12 mx-auto relative rounded-lg">
+            <div class="card shadow-md w-11/12 mx-auto relative rounded-lg bg-white shadow-primary">
                 <span class="badge absolute -top-2 -right-2 badge-primary">New</span>
                 <figure>
                     <img src="{data.lastPosts.image}" alt="{data.lastPosts.title}"  class="rounded-lg max-h-[500px]">
@@ -57,13 +57,13 @@ export let data;
                     <p class="whitespace-pre-line line-clamp-5">{data.lastPosts.content}</p>
                 </div>
                 <div class=" w-1/2 mx-auto mb-5">
-                    <a href="/blog/post/"><button class="btn btn-primary w-full text-white">Lire plus !</button></a>
+                    <a href="/blog"><button class="btn btn-primary w-full text-white">Lire plus !</button></a>
                 </div>
             </div>
         </section>
 
     </div>
-    <section class="bg-prim-grey py-5">
+    <section class=" py-5">
         <h2 class="text-4xl font-chivo text-center underline underline-offset-4">Newsletter</h2>
         <div class="my-5">
             <p class="text-center">Suivez nos actualités en vous inscrivant à notre newsletter</p>

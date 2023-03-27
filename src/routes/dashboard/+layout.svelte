@@ -3,6 +3,7 @@ import type { PageData } from '$lib/types';
 import {invalidateAll} from "$app/navigation";
 import {applyAction, enhance} from "$app/forms";
     export let data: PageData
+console.log(data)
 </script>
 
 <nav class="flex flex-row justify-between items-center p-2 ">
@@ -12,7 +13,7 @@ import {applyAction, enhance} from "$app/forms";
             {:else }
             <a href="/" class="mr-5"><i class="fa-solid fa-home fa-xl"></i></a>
         {/if}
-        <p>Hello {data.user.name} !</p>
+        <p>Hello {data.connectedUserName} !</p>
     </div>
     <div>
         <form action="/logout" method="POST" use:enhance={ () => {

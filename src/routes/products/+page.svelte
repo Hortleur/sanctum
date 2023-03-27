@@ -11,11 +11,11 @@
     </div>
 
 
-    <section>
+    <section class="lg:flex lg:flex-row lg:flex-wrap justify-between">
         {#each data.products as {id, name, description, picture}}
-            <div class="card w-11/12 rounded-lg shadow-lg mx-auto my-5">
-                <figure>
-                    <img src="{picture}" alt="{name}">
+            <div class="card w-11/12 lg:w-96 rounded-lg shadow-lg  mx-auto my-5">
+                <figure class="max-h-80">
+                    <img src="{picture}" alt="{name}" >
                 </figure>
                 <div class="card-body">
                     <h2 class="card-title">{name}</h2>
@@ -23,6 +23,5 @@
                 </div>
             </div>
         {/each}
-
     </section>
 </main>

@@ -10,6 +10,8 @@ export const load: LayoutServerLoad = async ({event, locals, url}: any) => {
         throw redirect(302, "/");
     }
 
+    const connectedUserName = locals.user.name;
+
     const desserts = await prisma.dessert.findMany({
         orderBy: {
             createdAt: "desc",
@@ -40,10 +42,9 @@ export const load: LayoutServerLoad = async ({event, locals, url}: any) => {
         orderBy: {
             createdAt: "desc",
         },
-        take: 1,
     });
     const subscribers = await prisma.subscribers.findMany();
     const roles = await prisma.roles.findMany();
 
-    return { desserts, users, roles, posts, subscribers , pathname};
+    return { desserts, users, roles, posts, subscribers , pathname, connectedUserName};
 }

@@ -22,8 +22,25 @@ export const load: LayoutServerLoad = async ({event, locals, url}: any) => {
         take: 1,
     });
 
+    let blogPosts = await prisma.post.findMany({
+        where: {
+            published: true,
+        },
+        include: {
+            author: {
+                select: {
+                    name: true
+                }
+            }
+        },
+        orderBy: {
+            createdAt: "desc",
+        }
+    });
+
     return {
         lastPosts,
         lastDesserts,
+        blogPosts,
     }
 }
