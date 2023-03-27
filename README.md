@@ -10,8 +10,7 @@
 * Prisma
 * SQLite
 * TailwindCss
-* Vitest
-* Playwright
+* fontawesome
 
 ### Start
 ***23/03/2023***
