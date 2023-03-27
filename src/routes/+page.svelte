@@ -15,8 +15,8 @@ export let data;
             <h2 class="text-4xl font-chivo text-center underline underline-offset-4">Dernier dessert</h2>
             <div class="card w-5/6 mx-auto mt-10 rounded-lg shadow-lg bg-prim-grey relative bg-white">
                 <span class="badge absolute -top-2 -right-2 badge-primary">New</span>
-                <figure>
-                    <img src="{data.lastDesserts.picture}" alt="{data.lastDesserts.name}" class="rounded-t-lg max-h-[500px]">
+                <figure class="max-w-80">
+                    <img src="{data.lastDesserts.picture}" alt="{data.lastDesserts.name}" class="rounded-t-lg">
                 </figure>
                 <div class="card-body">
                     <h3 class="card-title font-chivo">{data.lastDesserts.name}</h3>
